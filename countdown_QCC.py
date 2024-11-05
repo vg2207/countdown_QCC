@@ -421,9 +421,7 @@ elif selected_main_menu == "Q&A" :
                     
                     # Generate a 440 Hz sine wave
                     note_la = np.sin(frequency_la * t * 2 * np.pi)
-                    st.audio(note_la,
-                             sample_rate=sample_rate,
-                             autoplay=True)
+                    st.audio(note_la, sample_rate=sample_rate)
                     # winsound.Beep(frequency, duration)
                     time.sleep(1)
                     t10 -= 1
