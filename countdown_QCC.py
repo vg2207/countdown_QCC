@@ -411,6 +411,9 @@ elif selected_main_menu == "Q&A" :
                     mins10, secs10 = divmod(t10, 60)
                     timer10 = '{:02d}:{:02d}'.format(mins10, secs10)
                     st.markdown(f'<p class="big-font">{timer10}</p>', unsafe_allow_html=True)
+                    st.audio(1,
+                             sample_rate=sample_rate,
+                             autoplay=True)
                     # winsound.Beep(frequency, duration)
                     time.sleep(1)
                     t10 -= 1
