@@ -1,5 +1,3 @@
-pip install --upgrade pip
 streamlit
 streamlit-option-menu
 streamlit-extras
-python-beep
