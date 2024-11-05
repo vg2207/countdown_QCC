@@ -6,12 +6,12 @@ import streamlit as st
 from streamlit_option_menu import option_menu 
 from streamlit_extras.stylable_container import stylable_container
 import time
-import numpy as np
+from beep import beep
 
-sample_rate = 44100 
-seconds = 0.9 #seconds
-frequency = 150
 
+
+frequency = 150  # Set Frequency To 2500 Hertz
+duration = 900  # Set Duration To 1000 ms == 1 second
 
 
 # # CSS by andfanilo
@@ -140,19 +140,12 @@ if selected_main_menu == "Presentation" :
                     mins, secs = divmod(t1, 60)
                     timer = t1
                     st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                    st.audio(1,
-                             sample_rate=sample_rate,
-                             autoplay=True)
-                    # st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate), False) * 2 * np.pi),
-                    #          sample_rate=sample_rate,
-                    #          autoplay=True)
+                    beep(frequency*3, duration)
                     time.sleep(0.1)
                     t1 -= 1
                 
                 st.markdown('<p class="big-font">GO !</p>', unsafe_allow_html=True)
-                st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
-                             sample_rate=sample_rate,
-                             autoplay=True)
+                beep(frequency*4, duration*2)
                 time.sleep(1)
                 st.empty()
 
@@ -180,9 +173,7 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-grey"></p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
-                                     sample_rate=sample_rate,
-                                     autoplay=True)
+                            beep(frequency*3, duration)
                             time.sleep(0.1)
                             t2 -= 1
                         elif t2 > 300 :
@@ -215,7 +206,7 @@ if selected_main_menu == "Presentation" :
                         #     with right_col:
                         #         with st.empty():
                         #             st.markdown(f'<p class="dot-grey"></p>', unsafe_allow_html=True)
-                        #     winsound.Beep(frequency*2, duration)
+                        #     beep(frequency*2, duration)
                         #     time.sleep(0.1)
                         #     t2 -= 1
                         elif t2 > 60 :
@@ -248,9 +239,7 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-red"></p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
-                                     sample_rate=sample_rate,
-                                     autoplay=True)
+                            beep(frequency*3, duration)
                             time.sleep(0)
                             t2 -= 1
                         elif t2 > 5 :
@@ -283,18 +272,14 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-red"></p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency*2) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
-                                     sample_rate=sample_rate,
-                                     autoplay=True)
+                            beep(frequency*2, duration)
                             time.sleep(0.1)
                             t2 -= 1
 
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
-                             sample_rate=sample_rate,
-                             autoplay=True)
+                    beep(frequency*4, duration*2)
                     time.sleep(0)
                     
     if button_clicked_2:
@@ -411,26 +396,13 @@ elif selected_main_menu == "Q&A" :
                     mins10, secs10 = divmod(t10, 60)
                     timer10 = '{:02d}:{:02d}'.format(mins10, secs10)
                     st.markdown(f'<p class="big-font">{timer10}</p>', unsafe_allow_html=True)
-                    sample_rate = 44100  # 44100 samples per second
-                    seconds = 1  # Note duration of 2 seconds
-                    
-                    frequency_la = 440  # Our played note will be 440 Hz
-                    
-                    # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
-                    t = np.linspace(0, seconds, seconds * sample_rate, False)
-                    
-                    # Generate a 440 Hz sine wave
-                    note_la = np.sin(frequency_la * t * 2 * np.pi)
-                    st.audio(note_la, sample_rate=sample_rate)
-                    # winsound.Beep(frequency, duration)
+                    # beep(frequency, duration)
                     time.sleep(1)
                     t10 -= 1
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*3) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
-                             sample_rate=sample_rate,
-                             autoplay=True)
+                    beep(frequency*3, duration*2)
                     time.sleep(0)
 
 
@@ -455,18 +427,14 @@ elif selected_main_menu == "Q&A" :
                         else :
                             with st.empty():
                                 st.markdown(f'<p class="big-font-red">{timer20}</p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
-                             sample_rate=sample_rate,
-                             autoplay=True)
+                            beep(frequency, duration)
                             time.sleep(0.1)
                             t20 -= 1
 
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
-                             sample_rate=sample_rate,
-                             autoplay=True)
+                    beep(frequency*4, duration*2)
                     time.sleep(0)
                     
     if button_clicked_20:
