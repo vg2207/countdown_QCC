@@ -9,7 +9,7 @@ import time
 import numpy as np
 
 sample_rate = 44100 
-duration = 0.9 #seconds
+seconds = 0.9 #seconds
 frequency = 150
 
 
