@@ -140,14 +140,14 @@ if selected_main_menu == "Presentation" :
                     mins, secs = divmod(t1, 60)
                     timer = t1
                     st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*3) * np.linspace(0, seconds, seconds * sample_rate, False) * 2 * np.pi),
+                    st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate), False) * 2 * np.pi),
                              sample_rate=sample_rate,
                              autoplay=True)
                     time.sleep(0.1)
                     t1 -= 1
                 
                 st.markdown('<p class="big-font">GO !</p>', unsafe_allow_html=True)
-                st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, seconds*2 * sample_rate, False) * 2 * np.pi),
+                st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
                              sample_rate=sample_rate,
                              autoplay=True)
                 time.sleep(1)
@@ -177,7 +177,7 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-grey"></p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency*3) * np.linspace(0, seconds, seconds * sample_rate, False) * 2 * np.pi),
+                            st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
                                      sample_rate=sample_rate,
                                      autoplay=True)
                             time.sleep(0.1)
@@ -245,7 +245,7 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-red"></p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency*3) * np.linspace(0, seconds, seconds * sample_rate, False) * 2 * np.pi),
+                            st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
                                      sample_rate=sample_rate,
                                      autoplay=True)
                             time.sleep(0)
@@ -280,7 +280,7 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-red"></p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency*2) * np.linspace(0, seconds, seconds * sample_rate, False) * 2 * np.pi),
+                            st.audio(np.sin((frequency*2) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
                                      sample_rate=sample_rate,
                                      autoplay=True)
                             time.sleep(0.1)
@@ -289,7 +289,7 @@ if selected_main_menu == "Presentation" :
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, seconds*2 * sample_rate, False) * 2 * np.pi),
+                    st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
                              sample_rate=sample_rate,
                              autoplay=True)
                     time.sleep(0)
@@ -414,7 +414,7 @@ elif selected_main_menu == "Q&A" :
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*3) * np.linspace(0, seconds*2, seconds*2 * sample_rate, False) * 2 * np.pi),
+                    st.audio(np.sin((frequency*3) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
                              sample_rate=sample_rate,
                              autoplay=True)
                     time.sleep(0)
@@ -441,7 +441,7 @@ elif selected_main_menu == "Q&A" :
                         else :
                             with st.empty():
                                 st.markdown(f'<p class="big-font-red">{timer20}</p>', unsafe_allow_html=True)
-                            st.audio(np.sin((frequency) * np.linspace(0, seconds, seconds * sample_rate, False) * 2 * np.pi),
+                            st.audio(np.sin((frequency) * np.linspace(0, seconds, int(seconds * sample_rate) * sample_rate, False) * 2 * np.pi),
                              sample_rate=sample_rate,
                              autoplay=True)
                             time.sleep(0.1)
@@ -450,7 +450,7 @@ elif selected_main_menu == "Q&A" :
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, seconds*2 * sample_rate, False) * 2 * np.pi),
+                    st.audio(np.sin((frequency*4) * np.linspace(0, seconds*2, int(seconds * sample_rate)*2 * sample_rate, False) * 2 * np.pi),
                              sample_rate=sample_rate,
                              autoplay=True)
                     time.sleep(0)
