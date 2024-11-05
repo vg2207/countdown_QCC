@@ -140,9 +140,12 @@ if selected_main_menu == "Presentation" :
                     mins, secs = divmod(t1, 60)
                     timer = t1
                     st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                    st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate), False) * 2 * np.pi),
+                    st.audio(1,
                              sample_rate=sample_rate,
                              autoplay=True)
+                    # st.audio(np.sin((frequency*3) * np.linspace(0, seconds, int(seconds * sample_rate), False) * 2 * np.pi),
+                    #          sample_rate=sample_rate,
+                    #          autoplay=True)
                     time.sleep(0.1)
                     t1 -= 1
                 
