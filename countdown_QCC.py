@@ -6,7 +6,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu 
 from streamlit_extras.stylable_container import stylable_container
 import time
-from beep import beep
+# import winsound
 
 
 
@@ -140,13 +140,15 @@ if selected_main_menu == "Presentation" :
                     mins, secs = divmod(t1, 60)
                     timer = t1
                     st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                    beep(frequency*3, duration)
-                    time.sleep(0.1)
+                    # winsound.Beep(frequency*3, duration)
+                    # time.sleep(0.1)
+                    time.sleep(1)
                     t1 -= 1
                 
                 st.markdown('<p class="big-font">GO !</p>', unsafe_allow_html=True)
-                beep(frequency*4, duration*2)
-                time.sleep(1)
+                # winsound.Beep(frequency*4, duration*2)
+                # time.sleep(1)
+                time.sleep(2)
                 st.empty()
 
         with st.empty():
@@ -173,8 +175,9 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-grey"></p>', unsafe_allow_html=True)
-                            beep(frequency*3, duration)
-                            time.sleep(0.1)
+                            # winsound.Beep(frequency*3, duration)
+                            # time.sleep(0.1)
+                            time.sleep(1)
                             t2 -= 1
                         elif t2 > 300 :
                             with st.empty() :
@@ -206,7 +209,7 @@ if selected_main_menu == "Presentation" :
                         #     with right_col:
                         #         with st.empty():
                         #             st.markdown(f'<p class="dot-grey"></p>', unsafe_allow_html=True)
-                        #     beep(frequency*2, duration)
+                        #     winsound.Beep(frequency*2, duration)
                         #     time.sleep(0.1)
                         #     t2 -= 1
                         elif t2 > 60 :
@@ -239,8 +242,9 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-red"></p>', unsafe_allow_html=True)
-                            beep(frequency*3, duration)
-                            time.sleep(0)
+                            # winsound.Beep(frequency*3, duration)
+                            # time.sleep(0)
+                            time.sleep(1)
                             t2 -= 1
                         elif t2 > 5 :
                             with st.empty() :
@@ -272,15 +276,17 @@ if selected_main_menu == "Presentation" :
                             with right_col:
                                 with st.empty():
                                     st.markdown(f'<p class="dot-red"></p>', unsafe_allow_html=True)
-                            beep(frequency*2, duration)
-                            time.sleep(0.1)
+                            # winsound.Beep(frequency*2, duration)
+                            # time.sleep(0.1)
+                            time.sleep(1)
                             t2 -= 1
 
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    beep(frequency*4, duration*2)
-                    time.sleep(0)
+                    # winsound.Beep(frequency*4, duration*2)
+                    # time.sleep(0)
+                    time.sleep(2)
                     
     if button_clicked_2:
         st.empty()
@@ -396,14 +402,15 @@ elif selected_main_menu == "Q&A" :
                     mins10, secs10 = divmod(t10, 60)
                     timer10 = '{:02d}:{:02d}'.format(mins10, secs10)
                     st.markdown(f'<p class="big-font">{timer10}</p>', unsafe_allow_html=True)
-                    # beep(frequency, duration)
+                    # winsound.Beep(frequency, duration)
                     time.sleep(1)
                     t10 -= 1
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    beep(frequency*3, duration*2)
-                    time.sleep(0)
+                    # winsound.Beep(frequency*3, duration*2)
+                    # time.sleep(0)
+                    time.sleep(2)
 
 
     if button_clicked_30 :
@@ -427,15 +434,17 @@ elif selected_main_menu == "Q&A" :
                         else :
                             with st.empty():
                                 st.markdown(f'<p class="big-font-red">{timer20}</p>', unsafe_allow_html=True)
-                            beep(frequency, duration)
-                            time.sleep(0.1)
+                            # winsound.Beep(frequency, duration)
+                            # time.sleep(0.1)
+                            time.sleep(1)
                             t20 -= 1
 
 
                 with st.empty():        
                     st.markdown('<p class="big-font">TIME IS UP !</p>', unsafe_allow_html=True)
-                    beep(frequency*4, duration*2)
-                    time.sleep(0)
+                    # winsound.Beep(frequency*4, duration*2)
+                    # time.sleep(0)
+                    time.sleep(2)
                     
     if button_clicked_20:
         st.empty()
