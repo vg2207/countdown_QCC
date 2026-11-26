@@ -6,6 +6,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu 
 from streamlit_extras.stylable_container import stylable_container
 import time
+import numpy as np
 
 def play_beep(freq=150, duration=900, sample_rate=44100):
     t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
