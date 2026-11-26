@@ -214,7 +214,7 @@ else:
             show(display, fmt(remaining))
             play_beep(FREQ, DURATION)
 
-        run_countdown(display, 2 * 60, q_frame)
+        # run_countdown(display, 2 * 60, q_frame)
 
         show(display, "TIME IS UP !")
         play_beep(FREQ * 3, DURATION * 2)
