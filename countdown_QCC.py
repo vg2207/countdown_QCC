@@ -229,7 +229,7 @@ else:
             if remaining <= 3:
                 play_beep(FREQ, DURATION)
 
-        run_countdown(display, 3 * 60, a_frame)
+        run_countdown(display, 5 * 60, a_frame)
 
         show(display, "TIME IS UP !")
         play_beep(FREQ * 4, DURATION * 2)
